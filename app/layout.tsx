@@ -40,7 +40,15 @@ export default function RootLayout({
             >
               <ToasterProvider/>
               <ModalProvider/> 
-              {children}
+              <SignedIn>
+                {children}
+              </SignedIn>
+              <SignedOut>
+                <div>
+                  <h1>Please sign in to access the admin dashboard</h1>
+                  <SignInButton />
+                </div>
+              </SignedOut>
             </ThemeProvider>
           </main>
         </body>
